@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h2>Lista de jogos</h2>
+    <table>
+        {% for jogo in jogos %}
+        <tr>
+            <td>{{ jogo.titulo }} - {{ jogo.genero }}  ({{ jogo.plataforma }}) <span class="editar-apagar"> <a href="{{url_for('editar', id=jogo.id)}}"><i style="color: rgb(2, 77, 2);" class="fa-regular fa-pen-to-square"></i></a>   <a href="{{url_for('apagar', id=jogo.id)}}"><i style="color: darkred;" class="fa-solid fa-trash"></i></a> </span>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

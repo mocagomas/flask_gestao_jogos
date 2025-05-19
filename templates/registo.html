@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <form action="" method="POST">
+        {{ form.hidden_tag() }} <!-- o token CSRF é enviado -->
+        <h2>Registo</h2>
+     
+        <p>{{ form.username.label }} <br>
+            {{ form.username(size=40) }} <br>
+            {% for error in form.username.errors %}
+                <span style="color:red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.password.label }} <br>
+            {{ form.password(size=40) }} <br>
+            {% for error in form.password.errors %}
+                <span style="color:red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.confirmar.label }} <br>
+            {{ form.confirmar(size=40) }} <br>
+            {% for error in form.confirmar.errors %}
+                <span style="color:red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submeter() }}</p>
+    </form>
+    
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <h2>{% if request.endpoint == 'adicionar' %} Adicionar {% else %} Editar {% endif %} Jogo</h2>
+    <form class="form-adicionar" action="" method="post">
+        {{form.hidden_tag()}}
+        <p>{{ form.titulo.label }} {{ form.titulo() }}</p>
+        <p>{{ form.genero.label }} {{ form.genero() }}</p>
+        <p>{{ form.plataforma.label }}  {{ form.plataforma() }}</p>
+        <p>{{ form.submeter() }}</p>
+    </form>
+
+{% endblock %}
