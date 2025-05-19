@@ -13,7 +13,7 @@
             <h1>Gestão de Biblioteca de Jogos</h1>
             <div class="nav">
                 {% if current_user.is_authenticated %}
-                Olá {{ current_user.username }}
+                Olá, {{ current_user.username }}!
                     <a href="{{ url_for('listar')}}">Listar</a>
                     <a href="{{ url_for('adicionar')}}">Adicionar</a>
                     <a href="{{ url_for('logout')}}">Logout</a>
